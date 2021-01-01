@@ -1,0 +1,21 @@
+apiVersion: apps/v1/feed
+kind: Deployment
+metadata:
+  name: my-simple-node
+  labels:
+    app: my-simple-node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-simple-node
+  template:
+    metadata:
+      labels:
+        app: my-simple-node
+    spec:
+      containers:
+      - name: simple-node
+        image: mhayes30125/simple-node:latest
+        ports:
+        - containerPort: 80
