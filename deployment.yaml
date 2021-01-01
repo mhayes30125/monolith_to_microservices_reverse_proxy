@@ -1,21 +1,21 @@
 apiVersion: apps/v1/feed
 kind: Deployment
 metadata:
-  name: my-simple-node
+  name: monolith_to_microservices_reverse_proxy
   labels:
-    app: my-simple-node
+    app: monolith_to_microservices_reverse_proxy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-simple-node
+      app: monolith_to_microservices_reverse_proxy
   template:
     metadata:
       labels:
-        app: my-simple-node
+        app: monolith_to_microservices_reverse_proxy
     spec:
       containers:
-      - name: simple-node
-        image: mhayes30125/simple-node:latest
+      - name: monolith_to_microservices_reverse_proxy
+        image: mhayes30125/monolith_to_microservices_reverse_proxy:latest
         ports:
         - containerPort: 80
