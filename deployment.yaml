@@ -17,6 +17,6 @@ spec:
       containers:
       - name: monolith-to-microservices-reverse-proxy
         image: mhayes30125/monolith_to_microservices_reverse_proxy:latest
-        imagePullPolicy: Always
         ports:
         - containerPort: 8080
+      restartPolicy: Always
