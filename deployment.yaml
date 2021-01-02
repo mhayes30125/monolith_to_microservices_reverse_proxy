@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: monolith_to_microservices_reverse_proxy
+  name: monolith-to-microservices-reverse-proxy
   labels:
-    app: monolith_to_microservices_reverse_proxy
+    app: monolith-to-microservices-reverse-proxy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: monolith_to_microservices_reverse_proxy
+      app: monolith-to-microservices-reverse-proxy
   template:
     metadata:
       labels:
-        app: monolith_to_microservices_reverse_proxy
+        app: monolith-to-microservices-reverse-proxy
     spec:
       containers:
-      - name: monolith_to_microservices_reverse_proxy
+      - name: monolith-to-microservices-reverse-proxy
         image: mhayes30125/monolith_to_microservices_reverse_proxy:latest
+        imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8080
